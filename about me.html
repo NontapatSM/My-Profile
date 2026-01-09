@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: "#9a6a16",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="min-h-screen bg-white text-neutral-900">
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 border-b border-neutral-200 bg-white/80 backdrop-blur">
+    <nav class="mx-auto w-[min(100%-32px,980px)] py-3 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-2 font-extrabold tracking-[0.2px]">
+        <span>My Profile</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-2 text-sm font-semibold text-neutral-600">
+        <a class="rounded-xl px-3 py-2 hover:bg-neutral-100 hover:text-neutral-900" href="#about">About</a>
+        <a class="rounded-xl px-3 py-2 hover:bg-neutral-100 hover:text-neutral-900" href="#education">Education</a>
+        <a class="rounded-xl px-3 py-2 hover:bg-neutral-100 hover:text-neutral-900" href="#highlights">Highlights</a>
+        <a class="rounded-xl px-3 py-2 hover:bg-neutral-100 hover:text-neutral-900" href="#skills">Skills</a>
+        <a class="rounded-xl px-3 py-2 hover:bg-neutral-100 hover:text-neutral-900" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="mx-auto w-[min(100%-32px,980px)] py-10">
+    <!-- Proflie -->
+    <section
+      class="rounded-2xl border border-neutral-200 bg-gradient-to-br from-sky-50 via-white to-blue-50 p-6 shadow-sm">
+      <div class="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-5 items-start">
+        <!-- Avatar -->
+        <div class="h-[140px] w-[140px] overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+          <!-- Proflie Picture -->
+          <img class="h-full w-full object-cover" src="https://avatars.githubusercontent.com/u/189851255?v=4"
+            alt="Profile picture" />
+        </div>
+
+        <!-- Text -->
+        <div>
+          <h1 class="text-[28px] md:text-[34px] font-extrabold tracking-[0.2px] leading-tight">
+            Welcome to My Profile
+          </h1>
+          <p class="mt-2 text-neutral-600">
+            สวัสดีครับ ผมชื่อ 
+            <span class="font-bold text-neutral-900">นนทพัทธ์ ศิลธรรม</span>
+            หรือจะเรียกผมว่า กีตาร์ ก็ได้ครับ ตอนนี้ผมเป็นนักศึกษาที่กำลังมองหาโอกาสในการพัฒนาทักษะและความรู้ในด้าน Software Engineering ของตนเอง 
+            และหวังว่าจะนำความรู้และปรับสบการณ์เหล่านั้นไปปรับใช้กับการปรับอาชีพในอนาคต หวังว่าพี่ๆที่เข้ามาเห็นจะสนใจ และให้โอกาสกับนักศึกษาตัวเล็กๆ คนนี้ด้วยนะครับ
+
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span
+              class="rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm font-semibold text-neutral-700">Software
+              Engineering</span>
+            <span
+              class="rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm font-semibold text-neutral-700">Development Engineer</span>
+            <span
+              class="rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm font-semibold text-neutral-700">React</span>
+            <span
+              class="rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm font-semibold text-neutral-700">Express</span>
+          </div>
+
+          <div class="mt-5 flex flex-wrap gap-2">
+            <a class="inline-flex items-center justify-center rounded-xl bg-neutral-900 px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+              href="#contact">
+              Contact Me
+            </a>
+            <a class="inline-flex items-center justify-center rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-800 hover:bg-neutral-100"
+              href="#skills">
+              View Skills
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="scroll-mt-24 mt-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-extrabold tracking-[0.2px]">About Me</h2>
+      <p class="mt-2 text-neutral-600">
+        About me
+      </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="scroll-mt-24 mt-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-extrabold tracking-[0.2px]">Education</h2>
+
+      <div class="mt-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
+        <h3 class="text-base font-bold">
+          Bachelor of Science in Software Engineering
+        </h3>
+        <p class="mt-1 text-sm text-neutral-600">
+          Faculty of Informatics, Burapha University | 2023 – Present
+        </p>
+        <p class="mt-3 text-neutral-600">
+          I am currently pursuing my Bachelor’s degree in Software
+          Engineering. My studies focus on software development fundamentals,
+          system analysis, and software design.
+        </p>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section id="highlights" class="scroll-mt-24 mt-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-extrabold tracking-[0.2px]">
+        Highlights of My Life
+      </h2>
+
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <article class="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+          <img class="h-[180px] w-full object-cover"
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80&auto=format&fit=crop"
+            alt="Highlight 1" />
+          <div class="p-4">
+            <h3 class="font-bold">Project: Orbis Track</h3>
+            <p class="mt-1 text-sm text-neutral-600">
+              Orbis Track
+            </p>
+          </div>
+        </article>
+
+        <article class="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+          <img class="h-[180px] w-full object-cover"
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80&auto=format&fit=crop"
+            alt="Highlight 2" />
+          <div class="p-4">
+            <h3 class="font-bold">Project: MyMap</h3>
+            <p class="mt-1 text-sm text-neutral-600">
+              MyMap
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="scroll-mt-24 mt-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-extrabold tracking-[0.2px]">Skills Summary</h2>
+
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <!-- Column 1 -->
+        <div>
+          <h3 class="text-lg italic font-bold text-sky-700 tracking-[0.2px] mb-2">
+            Programming Languages
+          </h3>
+          <ul class="list-disc pl-6 space-y-1 text-base text-neutral-700">
+            <li>JavaScript</li>
+            <li>Java</li>
+            <li>SQL</li>
+            <li>PHP</li>
+          </ul>
+
+          <h3 class="text-lg italic font-bold text-sky-700 tracking-[0.2px] mt-6 mb-2">
+            Database Management
+          </h3>
+          <ul class="list-disc pl-6 space-y-1 text-base text-neutral-700">
+            <li>PostgreSQL</li>
+            <li>MySQL</li>
+          </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <h3 class="text-lg italic font-bold text-sky-700 tracking-[0.2px] mb-2">
+            Frameworks &amp; Libraries
+          </h3>
+          <ul class="list-disc pl-6 space-y-1 text-base text-neutral-700">
+            <li>React</li>
+            <li>Express</li>
+            <li>Laravel</li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div>
+          <h3 class="text-lg italic font-bold text-sky-700 tracking-[0.2px] mb-2">
+            Version Control
+          </h3>
+          <ul class="list-disc pl-6 space-y-1 text-base text-neutral-700">
+            <li>GitHub</li>
+          </ul>
+
+          <h3 class="text-lg italic font-bold text-sky-700 tracking-[0.2px] mt-6 mb-2">
+            Tools &amp; Platforms
+          </h3>
+          <ul class="list-disc pl-6 space-y-1 text-base text-neutral-700">
+            <li>Docker</li>
+            <li>Postman</li>
+            <li>Visual Studio Code</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="scroll-mt-24 mt-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-extrabold tracking-[0.2px]">Contact Me</h2>
+
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a class="flex items-center justify-between rounded-2xl border border-neutral-200 bg-white px-4 py-3 font-semibold text-neutral-700 hover:bg-neutral-100"
+          href="https://www.facebook.com/share/169ipJPMfZ/" target="_blank" rel="noreferrer">
+          <span>Facebook</span><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5 text-neutral-500" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 7h7v7" />
+            </svg>
+          </span>
+        </a>
+
+        <a class="flex items-center justify-between rounded-2xl border border-neutral-200 bg-white px-4 py-3 font-semibold text-neutral-700 hover:bg-neutral-100"
+          href="https://www.instagram.com/gt.nontapat?igsh=MWw5cHJkZTUzZGJteQ==" target="_blank" rel="noreferrer">
+          <span>Instagram</span><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5 text-neutral-500" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 7h7v7" />
+            </svg>
+          </span>
+        </a>
+
+        <a class="flex items-center justify-between rounded-2xl border border-neutral-200 bg-white px-4 py-3 font-semibold text-neutral-700 hover:bg-neutral-100"
+          href="https://github.com/NontapatSM" target="_blank" rel="noreferrer">
+          <span>GitHub</span><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5 text-neutral-500" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 7h7v7" />
+            </svg>
+          </span>
+        </a>
+
+        <div class="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-neutral-700">
+          <div>
+            <span class="font-bold text-neutral-900">Email:</span>
+            nontapat.sinthum@gmail.com
+          </div>
+          <div class="mt-1">
+            <span class="font-bold text-neutral-900">Phone:</span> 0972022585
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-10 text-center text-sm text-neutral-500">
+      © <span id="year"></span> Nontapat Sinthum.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
