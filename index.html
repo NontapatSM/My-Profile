@@ -185,15 +185,14 @@
             class="overflow-hidden rounded-2xl border border-neutral-200 bg-white"
           >
             <img
-              class="h-[180px] w-full object-cover"
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80&auto=format&fit=crop"
+              class="js-lightbox h-[300px] w-full object-cover cursor-zoom-in"
+              src="./Highlights/OrbisTrack.png"
+              data-full="./Highlights/OrbisTrack.png"
               alt="Highlight 1"
             />
             <div class="p-4">
-              <!-- Title -->
               <h3 class="font-bold text-neutral-900">Project: Orbis Track</h3>
 
-              <!-- Company + Year -->
               <div class="mt-1 flex items-baseline justify-between gap-3">
                 <p class="italic font-semibold text-sky-700">
                   SIAM DENSO MANUFACTURING CO., LTD.
@@ -203,7 +202,6 @@
                 </p>
               </div>
 
-              <!-- Description -->
               <p class="mt-2 text-sm text-neutral-600">
                 ออกแบบและพัฒนาซอฟต์แวร์สำหรับบริหารการยืม-คืน
                 และแจ้งซ่อมอุปกรณ์ภายในองค์กร รองรับคุณสมบัติหลัก เช่น
@@ -221,15 +219,14 @@
             class="overflow-hidden rounded-2xl border border-neutral-200 bg-white"
           >
             <img
-              class="h-[180px] w-full object-cover"
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80&auto=format&fit=crop"
+              class="js-lightbox h-[300px] w-full object-cover cursor-zoom-in"
+              src="./Highlights/mymap.png"
+              data-full="./Highlights/mymap.png"
               alt="Highlight 2"
             />
             <div class="p-4">
-              <!-- Title -->
               <h3 class="font-bold text-neutral-900">Project: MyMap</h3>
 
-              <!-- Company + Year -->
               <div class="mt-1 flex items-baseline justify-between gap-3">
                 <p class="italic font-semibold text-sky-700">
                   Myorder Intelligence Co., Ltd.
@@ -239,7 +236,6 @@
                 </p>
               </div>
 
-              <!-- Description -->
               <p class="mt-2 text-sm text-neutral-600">
                 ออกแบบและพัฒนาซอฟต์แวร์สำหรับวิเคราะห์ทำเลที่ตั้งสาขา
                 รองรับคุณสมบัติหลัก เช่น
@@ -260,7 +256,6 @@
         <h2 class="text-xl font-extrabold tracking-[0.2px]">Skills Summary</h2>
 
         <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-          <!-- Column 1 -->
           <div>
             <h3
               class="text-lg italic font-bold text-sky-700 tracking-[0.2px] mb-2"
@@ -285,7 +280,6 @@
             </ul>
           </div>
 
-          <!-- Column 2 -->
           <div>
             <h3
               class="text-lg italic font-bold text-sky-700 tracking-[0.2px] mb-2"
@@ -299,7 +293,6 @@
             </ul>
           </div>
 
-          <!-- Column 3 -->
           <div>
             <h3
               class="text-lg italic font-bold text-sky-700 tracking-[0.2px] mb-2"
@@ -338,9 +331,9 @@
             target="_blank"
             rel="noreferrer"
           >
-            <span>Facebook</span
-            ><span aria-hidden="true"
-              ><svg
+            <span>Facebook</span>
+            <span aria-hidden="true">
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -369,9 +362,9 @@
             target="_blank"
             rel="noreferrer"
           >
-            <span>Instagram</span
-            ><span aria-hidden="true"
-              ><svg
+            <span>Instagram</span>
+            <span aria-hidden="true">
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -400,9 +393,9 @@
             target="_blank"
             rel="noreferrer"
           >
-            <span>GitHub</span
-            ><span aria-hidden="true"
-              ><svg
+            <span>GitHub</span>
+            <span aria-hidden="true">
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -445,8 +438,68 @@
       </footer>
     </main>
 
+    <!-- LIGHTBOX / IMAGE PREVIEW MODAL (NO CLOSE BUTTON) -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 z-[999] hidden items-center justify-center bg-black/70 p-4"
+      aria-hidden="true"
+    >
+      <!-- click outside (black area) to close -->
+      <div class="absolute inset-0" data-close></div>
+
+      <div class="relative z-10 w-full max-w-5xl">
+        <img
+          id="lightboxImg"
+          class="max-h-[85vh] w-full rounded-2xl bg-white object-contain shadow-2xl"
+          alt=""
+        />
+      </div>
+    </div>
+
     <script>
+      // year
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // lightbox
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+
+      function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || "Image preview";
+        lightbox.classList.remove("hidden");
+        lightbox.classList.add("flex");
+        document.body.classList.add("overflow-hidden");
+        lightbox.setAttribute("aria-hidden", "false");
+      }
+
+      function closeLightbox() {
+        lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
+        lightboxImg.src = "";
+        document.body.classList.remove("overflow-hidden");
+        lightbox.setAttribute("aria-hidden", "true");
+      }
+
+      // click image to open
+      document.querySelectorAll(".js-lightbox").forEach((img) => {
+        img.addEventListener("click", () => {
+          const full = img.getAttribute("data-full") || img.src;
+          openLightbox(full, img.alt);
+        });
+      });
+
+      // click black overlay to close
+      lightbox.addEventListener("click", (e) => {
+        if (e.target && e.target.hasAttribute("data-close")) closeLightbox();
+      });
+
+      // ESC to close
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !lightbox.classList.contains("hidden")) {
+          closeLightbox();
+        }
+      });
     </script>
   </body>
 </html>
